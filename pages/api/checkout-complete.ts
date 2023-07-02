@@ -81,7 +81,7 @@ export default async function handler(
     );
   } catch (e) {
     console.error("Invalid signature " + e);
-    return res.status(400).json({ message: "Invalisdsdsd signature" });
+    return res.status(400).json({ message: "Invalid signature" });
   }
 
   if (event.type !== "checkout.session.completed") {
