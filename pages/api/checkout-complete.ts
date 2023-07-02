@@ -20,8 +20,6 @@ export const config = {
   },
 };
 
-console.log('dfsdfsdfsdfsdfsdf', AIRTABLE_API_KEY)
-
 
 async function insertToAirTable({
   name,
@@ -99,13 +97,13 @@ export default async function handler(
     }
   ).metadata;
 
-console.log({metadata})
+
   const amount = (
       event.data.object as {
         amount_total: number;
       }
     ).amount_total / 100;
-console.log(amount)
+
   await insertToAirTable({
     ...metadata,
     amount,
